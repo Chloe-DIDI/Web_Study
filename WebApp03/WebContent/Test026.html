@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test026.html</title>
+<script type="text/javascript">
+	
+	function startGame()
+	{
+		var strArr = ["가위", "바위", "보"];
+		
+		//alert("함수 호출 확인");
+		
+		// ※ Math.random();	-- 0.0 ~ 1.0 사이의 실수형태의 난수 발생
+		//alert(Math.random());
+		//--==>> 0.984188733188283
+		//		 0.47275350922992887
+		//       0.8262117288382493
+		
+		// 현재 우리에게 필요한 것은
+		// 1 ~ 3 의 정수 형태의 난수
+		var c = parseInt(Math.random()*3)+1;
+		//alert(c); //--==>> 1 ~ 3 사이의 정수형태의 난수 발생
+		
+		var u = parseInt(document.getElementById("txtUser").value);
+		
+		var msg = "";
+		g += "사용자:" + strArr[u-1] + ",  컴퓨터:" + strArr[c-1];
+		
+		//if(u==1 && c==1 || u==2 && c==2 || u==3 && c==3)
+		if(u==c)
+		ms
+		{
+			msg += " → 비겼습니다.";	
+		}
+		//else if(u==1 && c==2 || u==2 && c==3 || u==3 && c==1)
+		else if(u%3 == (c+2)%3)
+	//사용자낸 값을 3으로 나눈 나머지가	  =   컴퓨터가 낸 값의 +2를 한 값에서 3으로 나눈 나머지가
+		{
+			msg += " → 컴퓨터가 이겼습니다.";  	
+		}
+		else 
+		{
+			msg += " → 당신이 이겼습니다.";	
+		}
+		
+		document.getElementById("txtResult").value = msg;
+		
+	}
+</script>
+
+</head>
+<body>
+
+<!-- 
+	가위 바위 보 게임을 구성한다.
+	HTML, CSS, Javascript 를 활용한다.
+	자바스크립트 난수 발생 함수를 찾아 활용한다.
+	
+	페이지 레이아웃
+	----------------------------------------------------------
+	입력(1.가위, 2.바위, 3.보) : [	 2   ]  <게임결과확인>
+	
+	[ 사용자:바위 	컴퓨터:보  → 컴퓨터가 이겼습니다. ]
+ -->
+ 
+ <div>
+ 	<h1>자바스크립트 난수 발생 실습(가위바위보)</h1>
+ 	<hr>
+ </div>
+ 
+ <div>
+ 	입력(1.가위, 2.바위, 3.보)
+ 	<input type="text" id="txtUser" style="width: 65px;">
+ 	<button type="button" onclick="startGame()">게임 결과 확인</button>
+ 	<br><br>
+ 	<input type="text" id="txtResult" readonly="readonly" style="width: 360px;">
+ </div>
+ 
+
+</body>
+</html>

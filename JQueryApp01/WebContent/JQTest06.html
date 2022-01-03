@@ -1,0 +1,75 @@
+<!-- 무한스크롤 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest06.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function()
+	{
+		// 초기 게시물 구성 → 스크롤 생성 --------------------
+		
+		var dheight = $(document).height();
+		//▶ 문서의 길이
+		//▶ 모니터 크기와 해상도에 따라 값이 다르다. 
+		
+		// 테스트
+		alert(dheight);
+		
+		var sheight = $(window).scrollTop() + $(window).height();
+		
+		// 테스트
+		//alert(sheight);
+		
+		for(var i=0; i<30; i++)
+		{	
+			$("<h3>기존의 읽어온 게시물 " 
+					+ $(document).height() + " / " 
+					+ $(window).scrollTop()  + " / " 
+					+ $(window).height() 
+					+ "</h3>").appendTo("body");
+		}
+		//▶ $(document).height() > $(window).scrollTop() + $(window).height() 일 때 스크롤 생성
+		
+		// -------------------- 초기 게시물 구성 → 스크롤 생성
+		
+		
+		$(window).scroll(function()
+		{
+			var dheight = $(document).height();
+			var sheight = $(document).scrollTop() + $(window).height();
+			
+			// 스크롤이 바닥으로 내려졌을 때
+			// 태그 10개 추가하여 body에 붙이기
+			if (dheight == sheight)
+			{
+				// 반복문 10번 돌게 하기
+				for (var i=0; i<10; i++)
+				{
+					$("<h3>추가로 읽어온 게시물 " 
+							+ $(document).height() + " / " 
+							+ $(window).scrollTop()  + " / " 
+							+ $(window).height() + "</h3>").appendTo("body");
+				}
+			}	
+			
+		});
+		
+		
+	});
+
+</script>
+
+
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>

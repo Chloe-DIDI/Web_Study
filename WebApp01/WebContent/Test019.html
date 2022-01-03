@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test019.html</title>
+</head>
+<body>
+
+<div>
+	<h1>체크박스 만들기</h1>
+	<hr>
+</div>
+			
+			
+			<!-- 밥, 장조림, 김치 선택 시 --> 
+<div>
+	<form>
+			<!-- 밥, 장조림, 김치 선택 -->
+		<p>오늘 저녁으로 먹고 싶은 메뉴는?</p>
+		<input type="checkbox" name="foodCheck">밥
+		<input type="checkbox" name="foodCheck">미역국
+		<input type="checkbox" name="foodCheck">김치찌개
+		<input type="checkbox" name="foodCheck">계란말이
+		<input type="checkbox" name="foodCheck">장조림
+		<input type="checkbox" name="foodCheck">김
+		<input type="checkbox" name="foodCheck">멸치볶음
+		<input type="checkbox" name="foodCheck">김치
+	</form>
+</div>
+
+
+<div>
+	<form>
+		<!-- 1, 5, 8 선택,, value 로 적용이 되어있기 때문에 -->
+		<p>오늘 저녁으로 먹고 싶은 메뉴는?</p>
+		<input type="checkbox" name="foodCheck" value="1">밥
+		<input type="checkbox" name="foodCheck" value="2">미역국
+		<input type="checkbox" name="foodCheck" value="3">김치찌개
+		<input type="checkbox" name="foodCheck" value="4">계란말이
+		<input type="checkbox" name="foodCheck" value="5">장조림
+		<input type="checkbox" name="foodCheck" value="6">김
+		<input type="checkbox" name="foodCheck" value="7">멸치볶음
+		<input type="checkbox" name="foodCheck" value="8">김치
+	</form>
+</div>
+
+
+<div>
+	<form>
+		<!-- label , checked -->
+		
+		<label>
+		<input type="checkbox" name="foodCheck" value="1">밥
+		</label>
+		
+		<input type="checkbox" name="foodCheck" value="2" if="label2">
+		<label for="label2">미역국</label>
+		
+		
+		
+		
+		<input type="checkbox" name="foodCheck" value="3">김치찌개
+		<input type="checkbox" name="foodCheck" value="4">계란말이
+		<input type="checkbox" name="foodCheck" value="5">장조림
+		<input type="checkbox" name="foodCheck" value="6">김
+		
+		<!-- checked="checked" 이렇게하면 미리 선택되어 있다 -->
+		<input type="checkbox" name="foodCheck" value="7" checked="checked">멸치볶음
+		
+		
+		<input type="checkbox" name="foodCheck" value="8" id="label8">
+		<input type="text">
+		<br><br><br><br>
+		<label for="label8">김치</label>
+	
+	
+	
+	
+	</form>
+</div>
+
+</body>
+</html>

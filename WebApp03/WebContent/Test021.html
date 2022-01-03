@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test021.html</title>
+<style type="text/css">
+ * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeedd;}
+   input.btn {width: 80px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange; font-styl}
+   .txt {text-align: right;}
+</style>
+
+<script type="text/javascript">
+		function myArray()
+		{
+			// 입력값을 활용하여 자바스크립트 배열 구성
+			var tempStr = document.getElementById("txt01").value;
+			var arr = tempStr.split(" ");
+			//-- var arr = ["1", "2", "3", "4", "5"];
+			
+			// 배열의 전체 요소 출력
+			//document.getElementById("txt02").value = arr;		
+			var allStr = "";
+			for (var n=0; n<arr.length; n++)
+				allStr += arr[n] + " ";
+			document.getElementById("txt02").value = allStr;
+			
+			// 가장 큰 수 출력
+			var max = Number(arr[0]);
+			for (var n=1; n<arr.length; n++)
+			{
+				if (max<Number(arr[n]))
+					max = Number(arr[n]);
+			}
+			document.getElementById("txt03").value = max;
+		}
+		
+</script>
+
+
+</head>
+<body>
+
+<!-- 
+	사용자로부터 임의의 정수를 임의의 갯수만큼 입력받고,
+	그 내용으로 배열을 구성하여 
+	그 정수들 중 가장 큰 수를 출력해 줄 수 있는 페이지를 구성한다.
+	HTML, CSS, Javascript 활용.
+	
+	페이지 레이아웃
+	-----------------------------------------------
+	데이터 입력(공백 구분) [ 21	86	285  43  7	]	#txt01
+	
+		  <    결과 확인	>
+	
+	- 전체 출력 [ 2 86 285 43 7 ]					#txt02
+	- 가장 큰 수 [ 285 ]							#txt03
+	
+	-----------------------------------------------
+ -->
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		데이터 입력(공백 구분)
+		<input type="text" id="txt01" class="txt"><br><br>
+		<input type="button" value="결과 확인" class="btn" style="width: 350px;" onclick="myArray()"><br><br>
+		- 전체 출력
+		<input type="text" id="txt02" class="txt" readonly="readonly"><br>
+		- 가장 큰 수 
+		<input type="text" id="txt03" class="txt" readonly="readonly"><br>
+	</form>
+</div>
+
+</body>
+</html>

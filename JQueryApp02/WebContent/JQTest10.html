@@ -1,0 +1,247 @@
+<!-- 
+	※ 자바스크립트 힌트 ※
+		→ document.getElementsByTagName()
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest10.html</title>
+<style type="text/css">
+	body, div, span, table, th, td
+	{
+	   font-size: 12px;
+	}
+	#list
+	{
+	   border: 1px solid gray;
+	   border-collapse: collapse;
+	   width: 800px;
+	}
+	#list th
+	{
+	   width: 152px;
+	}
+	#list td
+	{
+	   width: 162px;
+	}
+	#list th, #list td
+	{
+	   border: 1px solid gray;
+	   padding: 3px;
+	}
+	
+	/* 10번 자바스크립트로 하고 11번은 제이쿼리로 하고 마무리~!! */
+	
+</style>
+
+<script type="text/javascript">
+function add()
+{
+	// 함수 호출 확인
+	//alert("함수 호출!");
+		
+	// 해당 start 시간 ~ end 시간까지 각각의 색깔로 표에 추가할 수 있도록...
+	// 표를...색칠을.... 어케하지... 표 채우기?
+	//@ ※ Hint:  document.getElementsByTagName()   
+		
+	/*
+	var item = document.getElementById("item").value;
+	var week = parseInt(document.getElementById("week").value);
+	var start = parseInt(document.getElementById("start").value);
+	var end = parseInt(document.getElementById("end").value);
+	var color = document.getElementById("color").value;
+		
+	// 테스트
+	//alert(item + "/" + week + "/" + start + "/" + end + color);
+	*/
+		
+		
+	var item = document.getElementById("item").value;            	// 제목
+	var week = parseInt(document.getElementById("week").value);		// 요일(0~3)
+	var start = parseInt(document.getElementById("start").value);	// 시작 시간(1 ~ 8)
+	var end = parseInt(document.getElementById("end").value);		// 종료 시간(1 ~ 8)
+	var color = document.getElementById("color").value;				// 색상
+		
+	var tdd = document.getElementsByTagName("td");					// ※ 모든 td 태그들
+	//@ tdd는 배열
+		
+	//테스트
+	//@ 배열이 구성됐다면, 꼭 length 습관처럼 찍어보기!
+	//alert(tdd.length);			//-- 32 (→ th 제외)(@ 빈 칸 32개)
+		
+	//@ td들 색이랑 제목 들어가게..
+	//@ 배열이라서 시작시간 종료시간은 1부터 시작이기 때문에 -1로 해줌
+	//요일(td)이 4가지 이기 때문에 → * 4
+	for(var i= (week + (start-1)*4); i<= (week + (end-1)*4); i+=4)
+	{
+		tdd[i].style.backgroundColor = color;
+		tdd[i].innerText = item;
+	}
+		
+	/*
+	// 월(week) → 0, 13:00(start) → 3(value값), 13:00(end) → 3 (@ value값)
+	for(var i= (week + (start-1)*4); i<= (week + (end-1)*4); i+=4)
+	{
+		tdd[i].style.backgroundColor = color;
+		tdd[i].innerText = item;
+	}
+		
+	for(var i= (0 + (3-1)*4); i<= (0 + (3-1)*4); i+=4)
+	{
+		tdd[i].style.backgroundColor = color;
+		tdd[i].innerText = item;
+	}
+		
+	for(var i= (8); i<= (8); i+=4)
+	{
+		tdd[i].style.backgroundColor = color;
+		tdd[i].innerText = item;
+	} 
+	//@ --> 8번째 색칠하고 글씨 쓰기
+		
+	*/
+		
+	document.getElementById("item").value="";
+	document.getElementById("item").focus();
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>일정</h1>
+<hr>
+
+<table id="list">
+	<tr>
+		<th>&nbsp;</th>
+		<th>월</th>
+		<th>화</th>
+		<th>수</th>
+		<th>목</th>
+	</tr>   
+		
+	<tr>
+		<th>11:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+		
+	<tr>
+		<th>12:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+		
+	<tr>
+		<th>13:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		
+	</tr>
+		
+	<tr>
+		<th>14:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	   
+	<tr>
+		<th>15:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	   
+	<tr>
+		<th>16:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	   
+	<tr>
+		<th>17:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	   
+	<tr>
+		<th>18:00</th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+		
+</table>
+
+<div style="margin-top: 20px;">
+	<label for="item">제목</label>
+	<input type="text" id="item">
+	<br>
+	<label for="week">날짜</label>
+	<select id="week">
+		<option value="0">월요일</option>
+		<option value="1">화요일</option>
+		<option value="2">수요일</option>
+		<option value="3">목요일</option>
+	</select>
+	<br>
+	<label for="start">시간</label>
+	<select id="start">
+		<option value="1">11:00</option>
+		<option value="2">12:00</option>
+		<option value="3">13:00</option>
+		<option value="4">14:00</option>
+		<option value="5">15:00</option>
+		<option value="6">16:00</option>
+		<option value="7">17:00</option>
+		<option value="8">18:00</option>
+	</select>
+	~
+	<select id="end">
+		<option value="1">11:00</option>
+		<option value="2">12:00</option>
+		<option value="3">13:00</option>
+		<option value="4">14:00</option>
+		<option value="5">15:00</option>
+		<option value="6">16:00</option>
+		<option value="7">17:00</option>
+		<option value="8">18:00</option>
+	</select>
+	<br>
+	
+	<label for="color">색상</label>
+	<select id="color">
+		<option value="#ff3300">빨강</option>
+		<option value="#ffff33">노랑</option>
+		<option value="#7799ff">파랑</option>
+		<option value="#808080">검정</option>
+	</select>
+	<br>
+	
+	<input type="button" value="일정 추가하기" style="margin-top: 15px;" onclick="add()">
+</div>
+
+
+
+
+</body>
+</html>
+

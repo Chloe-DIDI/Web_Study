@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test023.html</title>
+</head>
+<body>
+<div>
+	<h1>드롭다운메뉴(selectbox) 만들기</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<p>당신이 가장 좋아하는 운동은?</p>
+		<select name="selectSport">
+			<!-- <option>--- 선택하세요 ---</option>
+			<option value="val1">축구</option>
+			<option value="val2">야구</option>
+			<option value="val3">배구</option>
+			<option value="val4">농구</option> -->
+		
+		
+			  <!--▶ 사용빈도수를 고려 제일 많이 선택되는 옵션을 위로 배치하는 것을 고려! -->
+	         <option value="jikCode1">회장</option>
+	         <option value="jikCode2">사장</option>
+	         <option value="jikCode3">이사</option>
+	         <option value="jikCode4">부장</option>
+	         <option value="jikCode5">차장</option>
+	         <option value="jikCode6">과장</option>
+	         <option value="jikCode7">대리</option>
+	         <!--▶ 위치 배열을 바꿀 수 없다면 selected 옵션으로 기본값을 준다 -->
+	         <option value="jikCode8" selected="selected">사원</option>
+	         <option value="jikCode9">인턴</option>
+	          
+	      </select>
+	      
+      <br><br>
+      
+      
+		
+		<button type="button">확인</button>
+		<button type="reset">취소</button>
+		<br><br>
+		
+		<!-- 다중 선택 안된다. -->
+		<!-- <p>가고싶은 여행지는?</p>
+		<select name="trav">
+			<option value="val1">백두산</option>
+			<option value="val2">한라산</option>
+			<option value="val3">지리산</option>
+			<option value="val4">설악산</option>	
+			<option value="val1">속리산</option>
+		</select> -->
+		
+		<!-- 다중 선택 되게 하기 -->
+		<!--▶ 다중 선택시에는 모든 옵션 수를 한눈에 보이도록 사이즈를 옵션 수에 맞춰서 조절하는 것이 일반적이다. -->      
+		<p>가고싶은 여행지는?(다중 선택 가능)</p>
+		<select name="trav" multiple="multiple" size="5">
+			<option value="val1">백두산</option>
+			<option value="val2">한라산</option>
+			<option value="val3">지리산</option>
+			<option value="val4">설악산</option>	
+			<option value="val1">속리산</option>
+		</select>
+		
+	</form>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

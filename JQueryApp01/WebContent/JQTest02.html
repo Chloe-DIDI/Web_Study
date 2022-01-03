@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest02.html</title>
+<style type="text/css">
+	.item
+	{
+		border: solid 2px red;
+		color: white;
+		background: black;
+	}
+
+</style>
+
+<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+
+<script type="text/javascript">
+
+	
+	function test()
+	{
+		alert("함수 호출 확인~!!!");
+		var a = 10;
+	}
+	
+	//@ 메모리가 할당되야 기능함!
+	//@ 메모리를 할당받아야 할당받은 메모리 공간에 10 채워짐...
+	//@ 메모리 할당받는 순간 : 함수가 호출받는 순간임
+	
+	//jquery();
+	//jquery(document).ready();
+	//$();
+	//$(document).ready();
+	//@ 이렇게 쓰면 기본적으로 메모리 할당 받음
+	//@ jquery -> $ 로 치환해서 사용 하기로...
+	
+	/*
+	$(document).ready(function()
+	{
+		//alert("함수 호출 확인~!!!");
+		
+		// ※ 우리가.... 또는 이 페이지를 이용하는 사용자가...
+		//    뭔가 건드리지 않아도...
+		//    (즉, 특별한 이벤트를 발생시키지 않아도...)
+		//    자동으로 처리되 수 있는 영역
+		
+	});
+	*/
+	
+	$(function()
+	{
+		//alert("함수 호출 확인~!!!");
+		
+		// ※ 우리가.... 또는 이 페이지를 이용하는 사용자가...
+		//    뭔가 건드리지 않아도...
+		//    (즉, 특별한 이벤트를 발생시키지 않아도...)
+		//    자동으로 처리될 수 있는 영역
+		
+		/*
+		$("h1").click(function()
+		{
+			//alert("클릭되었네요...");				
+			//alert( $(this).html() );
+			//$(this).html("어떻게 될까요?");
+			//-----
+			//@ 클릭된 h1 엘리먼트
+			//@ --> 클릭하면 어떻게 될까요? 로 바뀜
+			//$(this).html( $(this).html() + "★" );
+		});
+		*/
+		
+		/*
+		$("h1").on("click", function()
+		{
+			//alert("클릭상태에 놓인 컨트롤");
+			alert( $(this).html() );
+		});
+		*/
+		
+		/*
+		$("h1").one("click", function()
+		{
+			//@ 한 번만 팝업창 뜸!
+			//alert("클릭~!!!");
+			//alert( $(this).html() );
+			
+			$(this).html(function(index, html)
+			{
+				//alert(html);
+				//alert(index);
+				return html + "♥";
+			});
+		});
+		*/
+		
+		//@ 다시 봐보기 여기! -> 확인 완료
+		/*
+		$("h1").on(
+		{
+			// mouseenter : 어찌어찌하겠다	→ 마우스 진입할 때
+			// mouseleave : 저찌저찌하겠다 → 마우스 빠져나올 때
+			mouseenter:function() { $(this).addClass("item"); }
+			, mouseleave:function() {$(this).removeClass("item"); }
+		});
+		*/
+
+		// mouseenter, mouseleave
+		$("h1").hover(function()
+		{
+			$(this).addClass("item");
+		}, function()
+		{
+			$(this).removeClass("item");
+		});
+		//@ 마우스 올리면 item클래스 추가하고, 아니면 삭제하고...
+		
+	});
+	
+</script>
+
+</head>
+<body>
+
+<!-- <h1 onclick="test()">윤유동</h1> -->
+<!-- <h1 class="item">윤유동</h1> -->
+<h1>윤유동</h1>
+<h1>박혜진</h1>
+<h1>박효빈</h1>
+
+</body>
+</html>
+

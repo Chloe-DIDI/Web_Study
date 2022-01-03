@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test030.html</title>
+<style type="text/css">
+	* {font-family: 맑은 고딕; font-weight: bold;}
+	.btn {width: 100px; height: 40px; font-size: 20px;}
+</style>
+
+<script type="text/javascript">
+ 	
+ 	var cnt = 0;		//-- 선택할 수 있는 아이스크림의 갯수
+ 	var userCnt = 0;	//-- 사용자가 선택한 아이스크림의 갯수
+ 	
+ 	function countSet(num)
+ 	{
+ 		//확인
+ 		//alert(num);
+ 		// 선택할 수 있는 아이스크림의 갯수 설정
+ 		cnt = parseInt(num); 		
+ 	}
+ 	
+ 	function actionSelect(obj)
+ 	{
+ 		//확인
+ 		//alert(obj.checked);
+ 		//--==>> true / false → 클릭 액션에 의해 check 되었을 때 true
+ 		if (obj.checked)
+		{
+ 			if (userCnt >= cnt)
+ 			{
+ 				alert("선택할 수 있는 갯수를 초과하였습니다.");
+ 				obj.checked = false;
+ 				return;
+ 			}
+ 			
+ 			// 사용자가 선택한 갯수 증가
+			userCnt++;
+		}
+ 		else 
+ 		{
+ 			// 사용자가 선택한 갯수 감소
+ 			userCnt--;
+ 		}
+ 		
+ 		alert(cnt + " 개 중 " + userCnt + "개 선택");
+ 	}
+ 	
+ 
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>아이스크림 주문</h2>
+	<form>
+		--- 사이즈 선택 --- <br><br> <!-- 라디오 버튼은 name에 같은 그룹으로 묶여있어야 중복 선택이 안됨 -->
+		<input type="radio" name="radioGroup" id="a1" value="1" onclick="countSet(1)"><label for="a1">싱글(1)</label><br>
+		<input type="radio" name="radioGroup" id="b1" value="2" onclick="countSet(2)"><label for="b1">더블(2)</label><br>
+		<input type="radio" name="radioGroup" id="c1" value="3" onclick="countSet(3)"><label for="c1">파인트(3)</label><br>
+		<input type="radio" name="radioGroup" id="d1" value="4" onclick="countSet(4)"><label for="d1">쿼터(4)</label><br>
+		<input type="radio" name="radioGroup" id="e1" value="6" onclick="countSet(6)"><label for="e1">패밀리(6)</label><br>
+		<input type="radio" name="radioGroup" id="f1" value="8" onclick="countSet(8)"><label for="f1">하프갤런(8)</label><br>
+		<br><br>
+		
+		--- 종류 선택 --- <br><br>
+		<input type="checkbox" name="checkGroup" id="a2" value="민트" onclick="actionSelect(this)"><label for="a2">민트초코</label>
+		<input type="checkbox" name="checkGroup" id="b2" value="바람" onclick="actionSelect(this)"><label for="b2">바람과함께사라지다</label>
+		<input type="checkbox" name="checkGroup" id="c2" value="사랑" onclick="actionSelect(this)"><label for="c2">사랑에빠진딸기</label>
+		<input type="checkbox" name="checkGroup" id="d2" value="슈팅" onclick="actionSelect(this)"><label for="d2">슈팅스타</label><br>
+		<input type="checkbox" name="checkGroup" id="e2" value="레인" onclick="actionSelect(this)"><label for="e2">레인보우샤베트</label>
+		<input type="checkbox" name="checkGroup" id="f2" value="봉봉" onclick="actionSelect(this)"><label for="f2">아몬드봉봉</label>
+		<input type="checkbox" name="checkGroup" id="g2" value="엄마" onclick="actionSelect(this)"><label for="g2">엄마는외계인</label>
+		<input type="checkbox" name="checkGroup" id="h2" value="요거" onclick="actionSelect(this)"><label for="h2">요거트</label>
+		<input type="checkbox" name="checkGroup" id="i2" value="초코" onclick="actionSelect(this)"><label for="i2">초콜렛</label><br>
+		<input type="checkbox" name="checkGroup" id="j2" value="뉴욕" onclick="actionSelect(this)"><label for="j2">뉴욕치즈케이크</label>
+		<input type="checkbox" name="checkGroup" id="k2" value="피스" onclick="actionSelect(this)"><label for="k2">피스타치오아몬드</label>
+		<input type="checkbox" name="checkGroup" id="l2" value="이상" onclick="actionSelect(this)"><label for="l2">이상한나라의솜사탕</label><br>
+		<input type="checkbox" name="checkGroup" id="m2" value="쿠키" onclick="actionSelect(this)"><label for="m2">쿠키앤크림</label>
+		<input type="checkbox" name="checkGroup" id="n2" value="체리" onclick="actionSelect(this)"><label for="n2">체리쥬빌레</label>
+		                                                              
+		<br><br>
+		
+		<button type="button" class="btn" style="width: 200px;" onclick="actionOrder()">주문</button>
+			
+	</form>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

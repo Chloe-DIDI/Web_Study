@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest07.html</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+	/* ▶ 이거랑 $(document).ready(function() 같다
+	$(function()
+	{
+	
+	});
+	 */
+
+	$(document).ready(function()
+	{
+		/* 
+		$("#all-check").change(function()
+		{
+			// 테스트
+			alert("change");
+		});	
+		 */
+		 
+		$("#all-check").click(function()
+		{
+			// 테스트
+			// alert("click");
+			
+			// 테스트 →							체크가 되어있어도 안되어있어도 둘 다 undefined
+			// alert($(this).attr("checked"));		//-- undefined / undefined
+			
+			// 속성이 어떤 값을 갖고 있는지에 대한 건 prop
+			// alert($(this).prop("checked"));		//-- 속성 true / false
+													// 체크가 ○   / 체크 x
+			// 자바스크립트 데려와서 쓴거	
+			// alert( this.checked );				//--속성 true / false
+													// 체크가 ○   / 체크 x
+			
+			// 제이쿼리
+			// alert( $(this).is(":checked") );		//- -속성 true / false
+													// 체크가 ○   / 체크 x
+			
+													
+			// 방법 1. 		▶	전체 선택 / 해제
+			// 체크박스들							allcheck박스
+			// $("div > input:checkbox").prop("checked", this.checked);
+			
+			// 방법 2. 		▶/* 선택한 요소의 자식들을 모두 선택하겠다 */
+			// $(선택자).children()』 
+			$("div").children().prop("checked", this.checked);
+		});
+		
+		
+		
+		
+		
+		
+	});
+</script>
+	
+</head>
+<body>
+
+
+<label>
+	<input type="checkbox" id="all-check">
+	<span style="font-weight: bold;">모두 선택</span>
+</label>
+
+<div>
+	<input type="checkbox" id="check1" ><label for="check1">바나나</label><br>
+	<input type="checkbox" id="check2"><label for="check2">딸기</label><br>
+	<input type="checkbox" id="check3"><label for="check3">망고</label><br>
+	<input type="checkbox" id="check4"><label for="check4">자몽</label><br>
+	<input type="checkbox" id="check5"><label for="check5">수박</label><br>
+</div>                           
+
+</body>
+</html>

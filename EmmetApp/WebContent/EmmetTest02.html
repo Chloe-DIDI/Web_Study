@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EmmetTest02.html</title>
+</head>
+<body>
+
+실습 1.
+
+h1#title.blue{Emmet}+(h2.suntitle{소제목}+p.content{내용})*5
+
+<h1 id="title" class="blue">Emmet</h1>
+<h2 class="suntitle">소제목</h2>
+<p class="content">내용</p>
+<h2 class="suntitle">소제목</h2>
+<p class="content">내용</p>
+<h2 class="suntitle">소제목</h2>
+<p class="content">내용</p>
+<h2 class="suntitle">소제목</h2>
+<p class="content">내용</p>
+<h2 class="suntitle">소제목</h2>
+<p class="content">내용</p>
+
+<!-- ★ 만약 스타일을 적용시키고 싶다면 span! ▼ 밑에 처럼 이렇게 하면 됨!
+
+<span style="color: white;"> ★ ← 여기랑
+	
+	<h1 id="title" class="blue">Emmet</h1>
+	<h2 class="suntitle">소제목</h2>
+	<p class="content">내용</p>
+	<h2 class="suntitle">소제목</h2>
+	<p class="content">내용</p>
+	<h2 class="suntitle">소제목</h2>
+	<p class="content">내용</p>
+	<h2 class="suntitle">소제목</h2>
+	<p class="content">내용</p>
+	<h2 class="suntitle">소제목</h2>
+	<p class="content">내용</p>
+	
+</span> ★ ← 여기 check~~~~~~~~!!!!!!!!!!!!!!!!!!!!
+
+
+ -->
+
+
+
+
+실습 2.
+
+table>tr.line*3>((td.col{내용$})*3(td.comm{부연설명}))
+<table>
+	<tr class="line">
+		<td class="col">내용1</td>
+		<td class="comm">부연설명</td>
+		<td class="col">내용2</td>
+		<td class="comm">부연설명</td>
+		<td class="col">내용3</td>
+		<td class="comm">부연설명</td>
+	</tr>
+	<tr class="line">
+		<td class="col">내용1</td>
+		<td class="comm">부연설명</td>
+		<td class="col">내용2</td>
+		<td class="comm">부연설명</td>
+		<td class="col">내용3</td>
+		<td class="comm">부연설명</td>
+	</tr>
+	<tr class="line">
+		<td class="col">내용1</td>
+		<td class="comm">부연설명</td>
+		<td class="col">내용2</td>
+		<td class="comm">부연설명</td>
+		<td class="col">내용3</td>
+		<td class="comm">부연설명</td>
+	</tr>
+</table>
+
+
+실습 3.
+table#tbl>tr#line$*2(th#head${항목$}+(td.col{내용$})*3)
+<table id="tbl">
+	<tr id="line1">
+		<th id="head1">항목1</th>
+		<td class="col">내용1</td>
+		<td class="col">내용2</td>
+		<td class="col">내용3</td>
+	</tr>
+	<tr id="line2">
+		<th id="head2">항목2</th>
+		<td class="col">내용1</td>
+		<td class="col">내용2</td>
+		<td class="col">내용3</td>
+	</tr>
+</table>
+
+
+
+
+
+</body>
+</html>

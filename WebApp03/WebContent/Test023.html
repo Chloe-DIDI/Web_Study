@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test023.html</title>
+<style type="text/css">
+ * {color: #223322;}
+   input {font-family: 나눔고딕코딩; font-weight: bold;}
+   input:focus {background-color: #eeeedd;}
+   input.btn {width: 80px; font-weight: bold; font-family: 맑은 고딕;}
+   input.btn:hover {color: orange;}
+   td {text-align: center;}
+   .txt {text-align: right;}
+   textarea {font-family: 나눔고딕코딩; font-weight: bold;}
+</style>
+
+<script type="text/javascript">
+	
+	function actionScore()
+	{
+		var str = "";
+		var arr = new Array(new Array(), new Array(), new Array(), new Array(), new Array(), new Array());
+		//   				이름들		 국어점수들	  영어점수들   수학점수들	총점들		 석차들 
+		var n = 0;
+		
+		do
+		{
+			str = prompt("이름 국어 영어 수학(" + (n+1) + ") : ");
+			
+			if (str == null || str == "." || str == " ")
+				break;
+
+			var member = str.split(" ");
+			
+			//				0번째에 있는 이름
+			arr[0][n] = member[0];
+			arr[1][n] = member[1];
+			arr[2][n] = member[2];
+			arr[3][n] = member[3];
+			arr[4][n] = (Number(member[1]) + Number(member[2]) + Number(member[3])).toString();
+			arr[5][n] = 1;
+			
+			//alert(arr[4][n]);
+			//alert(arr[5][n]);
+			
+			n++;
+			
+		} while (true);
+		
+		
+		// 석차 계산
+		for (var i=0; i<arr[0].length; i++)
+		{
+			for (var j=0; j<arr[0].length; j++)
+			{
+				if(i==j)
+				{
+					continue;	
+				}
+				
+				if (Number(arr[4][i]) < Number(arr[4][j]))			//총점비교
+				{
+					// i 번째 학생의 등수를 1만큼 증가			
+					// i 번째 학생의 arr[5][i] 를 1만큼 증가		//continue 기준 뒷부분
+					arr[5][i] = (Number(arr[5][i])+1).toString();
+				}	
+			}
+		}
+		//-------------------- 여기까지 수행하면 arr 배열 구성 끝~!!!
+		
+		
+		var result = "";
+		// 구성은 끝났지만 arr 출력시켜줄 구문이 없어서 출력구문 만들거야~!
+		for (var j=0; j<arr[0].length; j++)
+		{
+			for (var k=0; k<arr.length; k++)
+			{
+				//alert(k + ", " + j);
+				result += arr[k][j] + " ";
+			}
+			result += "\n";
+		}
+		
+		document.getElementById("txtCount").value = arr[0].length;
+		document.getElementById("memberList").value = "이름 국어 영어 수학 총점 등수\n";
+		document.getElementById("memberList").value += result;
+	}
+	
+</script>
+
+
+
+
+
+</head>
+<body>
+
+<!-- 
+	prompt() 를 활용하여 여러 명의 성적을 입력받고,
+	등수를 부여하여 리스트를 출력하는 페이지를 구성한다.
+	HTML, CSS, Javascript 활용.
+	
+	페이지 레이아웃
+	---------------------------------------------------- prompt()
+	<성적 정보 입력>→→→→→→→→→→→→→→→→→→→→→→→→ 이름 국어 영어 수학(1):
+	
+	전체 인원 수 : [ 3]명
+	-------------------------------------
+	이름	국어  영어  수학  총점  등수
+	최보라   90    80    70   xxx	 1등
+	최파랑   80    70	 60	  xxx	 2등
+	최노랑   80    70	 60	  xxx	 3등
+	-------------------------------------
+	
+	---------------------------------------------------
+	
+ -->
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<input type="button" value="성적 정보 입력" class="btn" style="width: 200px;" onclick="actionScore()">
+		<br><br>
+		전체 인원 수 : 
+		<input type="text" id="txtCount" class="txt" style="width: 20px;" readonly="readonly">명
+		<br><br>
+		<textarea rows="10" cols="50" id="memberList" readonly="readonly"></textarea>  
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test014.html</title>
+
+<script type="text/javascript">
+<!-- 자바스크립트 내 작성인데도 주석은 html 주석문을 사용... why?
+		답모르겟음ㅋㅋㅋㅋ 뭔 설명인지;
+		
+	// msg 변수 → 함수 밖에 선언 → 모든 함수에서 접근 가능한 전역 변수
+	var msg = "2021년 10월의 한 가운데에서...";
+	//--『var』 키워드 사용 여부와 관계없이 전역 변수의 형태로 기능하는 상황
+	function buttonOnclick1()
+	{
+		// alert("첫 번째 버튼 클릭");
+		
+		alert(msg);
+		
+		
+		/*§ var 지역변수*/
+		// var 키워드 포함 → name 변수 → 함수 내부에 선언 → 지역 변수
+		/*§ var name = "송해덕"; */
+		
+		//var 키워드 생략 → name 변수 → 함수 내부에 선언 → 상황에 따르 지역/전역 변수
+		name = "김진희";
+		
+		document.write("이름 : " + name);
+		/*§ 1번 클릭하면 이름 : 송해덕 나옴 */
+	}
+	
+	function buttonOnclick2()
+	{
+		// alert("두 번째 버튼 클릭");
+		
+		alert(msg);		
+		document.write("이름 : " + name);
+		/*§ 2번 클릭하면 이름 : 만 나옴 */
+	}
+//-->
+</script>
+
+<noscript>
+	자바스크립트가 사용되지 못할 경우 표현되는 영역
+</noscript>
+</head>
+<body>
+
+<input type="button" id="button1" value="Button" onclick="buttonOnclick1()"><br>
+<input type="button" id="button2" value="Button" onclick="buttonOnclick2()">
+
+
+		
+
+</body>
+</html>

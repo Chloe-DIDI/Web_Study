@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest01.html</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<!-- 제이쿼리문법시작 -->
+
+   <script type="text/javascript">
+   /* 관찰 */
+      $(function()      
+   {
+      var d= 100; /* 속도 */
+      $("#navigation a").each(function() /* 각각 a태그를 적용하겠다 */
+            {
+         $(this).stop().animate({"marginTop":"-80px"},d+=100);   /* d+=100시간 격차 */
+            });
+      
+      $("#navigation > li").hover(function()
+            {
+               $("a", $(this)).stop().animate({"marginTop":"-2px"}, 100);
+               /* 커서를 두면 내려가있는상태로 */
+            }, function()
+            {
+               $("a", $(this)).stop().animate({"marginTop":"-80px"},400)
+               /* 마우스를  떼면 위로올라감 */
+            }
+      );
+   });
+   </script>
+
+</head>
+<body>
+      <table>
+         <tr>
+            <td>
+               <ul id="navigation">
+                  <li class="home"><a href="#"><span>home</span></a></li>
+                  <li class="about"><a href="#"><span>about</span></a></li>
+                  <li class="search"><a href="#"><span>search</span></a></li>
+                  <li class="photos"><a href="#"><span>photos</span></a></li>
+                  <li class="rssfeed"><a href="#"><span>rssfeed</span></a></li>
+                  <li class="podcasts"><a href="#"><span>podcasts</span></a></li>
+                  <li class="contact"><a href="#"><span>contact</span></a></li>
+               </ul>
+            </td>
+         </tr>
+      </table>
+</body>
+</html>

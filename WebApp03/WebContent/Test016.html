@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test016.html</title>
+<style type="text/css">
+	* {color: #223322;}
+    input
+	{
+		font-family: 나눔고딕코딩;
+		font-weight: bold;
+	}
+	input:focus
+	{
+		backgroud-color: #eeeedd;
+	}
+	input.btn
+	{
+		width: 80px;
+		font-weight: bold;
+		font-family: 맑은 고딕;
+	}
+	input.btn:hover
+	{
+		color: orange;
+	}
+	input.btn:active
+	{
+		color: red;
+	}
+</style>
+
+<script type="text/javascript">
+
+/*  함수 4개로 나눠서 작업!!
+ 	→ 덧셈 뺄셈 곱셈 나눗셈
+ */
+/* function btnAddonclick()
+   {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      
+      var result = Number(num1) + Number(num2);
+      document.getElementById("result").value = result;
+      
+   }
+   
+   function btnSubonclick()
+   {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      
+      var result = parseInt(num1) - parseInt(num2);
+      document.getElementById("result").value = result;
+      
+   }
+   
+   function btnMultionclick()
+   {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      
+      var result = Number(num1) * Number(num2)
+      document.getElementById("result").value = result;
+   }
+   
+   function btnDivonclick()
+   {
+      
+      //var num1 = document.getElementById("num1").value;
+      //var num2 = document.getElementById("num2").value;
+      
+      //var result = parseInt(num1) / parseInt(num2);
+      //document.getElementById("result").value = result;
+      
+      
+      document.getElementById("result").value
+      = parseInt(document.getElementById("num1").value) / parseInt(document.getElementById("num2").value);
+   } */
+
+//	함수 한개로 풀어보기!!
+ 	function myCalc(obj)
+	{
+	    //테스트
+		//alert("함수 호출 완료~!!!");
+		//alert(obj.value);
+		
+		var vNum1 = document.getElementById("num1").value;
+		var vNum2 = document.getElementById("num2").value;
+		var vResult = 0;
+		
+		if (obj.value == "더하기")
+		{
+			//alert("덧셈 연산 수행");
+			vResult = parseInt(vNum1) + parseInt(vNum2);
+		} 
+		else if (obj.value == "빼기")
+		{
+			//alert("뺄셈 연산 수행");
+			vResult = parseInt(vNum1) - parseInt(vNum2);
+		} 
+		else if (obj.value == "곱하기")
+		{
+			//alert("곱셈 연산 수행");
+			vResult = parseInt(vNum1) * parseInt(vNum2);
+		}
+		else if (obj.value == "나누기")
+		{
+			//alert("나눗셈 연산 수행");
+			vResult = parseInt(vNum1) / parseInt(vNum2);
+		}
+		
+		document.getElementById("result").value = vResult;
+	} 
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<p>두 개의 정수를 입력받고</p>
+	<p>합, 차, 곱, 몫을 연산하여 연산 결과를 출력할 수 있도록 한다.</p>
+	<p>HTML, CSS, Javascript 를 활용하여 처리한다.</p>
+</div>
+
+<div>
+	<form>
+		정수1 <input type="text" id="num1" style="width: 80px;">
+		정수2 <input type="text" id="num2" style="width: 80px;">
+		<br><br>
+		
+		
+		<!--  함수 4개로 나눠서 작업!! 
+		<input type="button" class="btn" value="더하기" onclick="btnAddonclick()">
+		<input type="button" class="btn" value="빼기" onclick="btnSubonclick()">
+		<input type="button" class="btn" value="곱하기" onclick="btnMultionclick()">
+		<input type="button" class="btn" value="나누기" onclick="btnDivonclick()"> -->
+		
+		<!-- 함수 한개로 풀어보기!! -->
+		<input type="button" class="btn" value="더하기" onclick="myCalc(this)">
+		<input type="button" class="btn" value="빼기" onclick="myCalc(this)">
+		<input type="button" class="btn" value="곱하기" onclick="myCalc(this)">
+		<input type="button" class="btn" value="나누기" onclick="myCalc(this)">
+		<br><br>
+		
+		결과 <input type="text" id="result" style="width: 80px;" disabled="disabled">
+		<input type="reset" class="btn" value="취소">
+	</form>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+</body>
+</html>

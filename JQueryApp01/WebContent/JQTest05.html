@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest05.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+   $(document).ready(function ()
+   {
+      //키보드 관련 이벤트
+      //$("textarea").keydown(function()
+      $("textarea").keyup(function()      //keyup일때 이벤트 처리를 넣어준다
+      {
+         //alert("확인");
+         
+         //텍스트박스에 입력된 값을 경고창을 통해 확인
+         //alert($(this).text());         //text()-> (x)
+         //alert($(this).html());         //html()-> (x)
+         //alert($(this).val());
+         
+         var len = $(this).val().length;
+         //alert(len);
+         var remain = 10 -len;
+         $("h1").html(remain);   //ex:앞으로 몇글자 작성 할 수 있다는 것을 웹에서 보여질떄 활용
+         //remain이 0이 되었을떄 
+         //입력을 막아버리던지. 경고창을 띄우던지
+         //등의 추가적인 액션처리를 할수 있따
+         if(remain<=3 && remain>=1)
+            {
+               $("h1").css("color", "orange");
+               //3~1은 오렌지색으로 표시
+            }
+         else if(remain<=0)
+            {
+               $("h1").css("color", "red").html("더이상 입력 불가");
+               //0과 0보다 작을떄는 빨강색
+               $(this).attr("disabled", "disabled");      //여기서 잠깐 this는 『textarea』
+            }
+         else
+            {
+               $("h1").css("color", "black");
+               //
+            }
+      });
+      
+    $("button").click(function()
+	{
+		$("textarea").removeAttr("disable");
+		$("textarea").focus();
+	})
+      
+   });
+</script>
+</head>
+<body>
+
+키보드 관련 이벤트<br>
+1. keydown / 2.keypress / 3.keyup 순으로 이벤트 발생<br>
+
+<div>
+   <p>남기고 싶은말</p>
+   <h1>10</h1>
+   <textarea rows="10" cols="70"></textarea>
+   <button type ="button">해제</button>
+   <!-- 해제 버튼을 누르면 텍스트 제거가 되겠끔 -->
+</div>
+</body>
+</html>

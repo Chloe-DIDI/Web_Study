@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EmmetTest01.html</title>
+</head>
+<body>
+
+<div>
+	<h1>※ 기능 적용 액션 키 → Ctrl + E</h1>
+	<hr>
+</div>
+
+1. 태그 선택자
+
+div 적고 Ctrl + E
+<div></div>
+
+div{}
+<div></div>
+
+div{abc}
+<div>abc</div>
+
+a
+<a href=""></a>
+
+img
+<img src="" alt="" />
+
+
+2. 아이디 선택자
+div#box
+<div id="box"></div>
+
+div라는 박스안에 kkkk라는 내용을 집어넣을거야
+div#box{kkkk}
+<div id="box">kkkk</div>
+
+#box
+<div id="box"></div>
+
+box아이디에 내용을 123으로 넣을거야
+#box{123}
+<div id="box">123</div>
+
+
+3. 클래스 선택자
+
+div.items
+<div class="items"></div>
+
+div.items{aaa}
+<div class="items">aaa</div>
+
+.items
+<div class="items"></div>
+
+.items{aaaa}
+<div class="items">aaaa</div>
+
+4.조합
+
+div#box.items
+<div id="box" class="items"></div>
+
+div#box.items.unit.control
+<div id="box" class="items unit control"></div>
+
+div#box.items.unit{aaaa}
+<div id="box" class="items unit">aaaa</div>
+
+#box.items.unit{bbb}
+<div id="box" class="items unit">bbb</div>
+
+
+5. 속성 선택자
+
+div[title]
+<div title=""></div>
+
+div[title='test']
+<div title="test"></div>
+
+a[href='www.naver.com' title='네이버']
+<a href="www.naver.com" title="네이버"></a>
+
+a[href='www.naver.com' title='네이버']{사이트 이동}
+<a href="www.naver.com" title="네이버">사이트 이동</a>
+
+
+6. PCDATA
+
+div{박스}
+<div>박스</div>
+
+a{홈페이지로이동}
+<a href="">홈페이지로이동</a>
+
+p{문단내용기술}
+<p>문단내용기술</p>
+
+
+7. 반복 생성
+
+div*5
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+img[src=images/dog.jpg]*5
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+
+
+클래스가 박스인 div를 5개만들거야
+.box*5
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+.box{content}*5
+<div class="box">content</div>
+<div class="box">content</div>
+<div class="box">content</div>
+<div class="box">content</div>
+<div class="box">content</div>
+
+#box$*5
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<div id="box4"></div>
+<div id="box5"></div>
+
+.box#box${box$}*5
+<div class="box" id="box1">box1</div>
+<div class="box" id="box2">box2</div>
+<div class="box" id="box3">box3</div>
+<div class="box" id="box4">box4</div>
+<div class="box" id="box5">box5</div>
+
+img[src=images/dog.jpg]*5
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+<img src="images/dog.jpg" alt="" />
+
+h$*6
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+<h5></h5>
+<h6></h6>
+
+h${제목$}*6
+<h1>제목1</h1>
+<h2>제목2</h2>
+<h3>제목3</h3>
+<h4>제목4</h4>
+<h5>제목5</h5>
+<h6>제목6</h6>
+
+
+
+8.연속 생성
+
+div+p
+<div></div>
+<p></p>
+
+h1{제목}+p{내용}*5
+<h1>제목</h1>
+<p>내용</p>
+<p>내용</p>
+<p>내용</p>
+<p>내용</p>
+<p>내용</p>
+
+
+(h1{제목$}+p{내용$}*2)*5
+<h1>제목1</h1>
+<p>내용1</p>
+<p>내용2</p>
+<h1>제목2</h1>
+<p>내용1</p>
+<p>내용2</p>
+<h1>제목3</h1>
+<p>내용1</p>
+<p>내용2</p>
+<h1>제목4</h1>
+<p>내용1</p>
+<p>내용2</p>
+<h1>제목5</h1>
+<p>내용1</p>
+<p>내용2</p>
+
+
+div+a+div+p+div+img
+<div></div>
+<a href=""></a>
+<div></div>
+<p></p>
+<div></div>
+<img src="" alt="" />
+
+
+
+9.하위 생성
+table+
+<table>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+
+ul+
+<ul>
+	<li></li>
+</ul>
+
+ol+
+<ol>
+	<li></li>
+</ol>
+
+<!-- tab 키를 누르면 자동으로 다음 입력쪽으로 커서 감!! -->
+select+
+<select name="" id="">
+	<option value=""></option>
+</select>
+
+10. 자식 생성
+div>p
+<div>
+	<p></p>
+</div>
+
+
+div>p*5
+<div>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+</div>
+
+(div>p*2)*3
+<div>
+	<p></p>
+	<p></p>
+</div>
+<div>
+	<p></p>
+	<p></p>
+</div>
+<div>
+	<p></p>
+	<p></p>
+</div>
+
+
+table#tbl>tr*5>td*3
+<table id="tbl">
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+table#tbl>tr*3>td.label+td.content
+<table id="tbl">
+	<tr>
+		<td class="label"></td>
+		<td class="content"></td>
+	</tr>
+	<tr>
+		<td class="label"></td>
+		<td class="content"></td>
+	</tr>
+	<tr>
+		<td class="label"></td>
+		<td class="content"></td>
+	</tr>
+</table>
+
+table#tbl>tr*3>td#label$+td.content
+<table id="tbl">
+	<tr>
+		<td id="label1"></td>
+		<td class="content"></td>
+	</tr>
+	<tr>
+		<td id="label2"></td>
+		<td class="content"></td>
+	</tr>
+	<tr>
+		<td id="label3"></td>
+		<td class="content"></td>
+	</tr>
+</table>
+
+table#tbl>(tr>th*3)+((tr>td*3)*5)
+<table id="tbl">
+	<tr>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+
+
+
+
+<!-- lorem/Lorem 으로 하면 뭐가 주르륵 나오는데 다 다르게 나옴 -->
+
+
+<!-- ① -->
+lorem
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Quos expedita recusandae in aspernatur est quis accusantium soluta magni qui nisi placeat 
+temporibus itaque laboriosam voluptate saepe suscipit repudiandae quibusdam officia.
+
+lorem
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Praesentium voluptatem necessitatibus eligendi natus suscipit excepturi dicta et dolore
+ assumenda nisi optio quaerat voluptatibus repellat sunt odio voluptas reiciendis perferendis architecto.
+
+Lorem
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+Quae doloribus sint dignissimos alias accusamus quisquam asperiores dicta eum veniam quia nostrum 
+praesentium laudantium cum. Quibusdam facilis magnam impedit consectetur omnis.
+
+
+<!--  시작~  -->
+table>(tr>th*2)+(tr>(td{world}+td{test}))*3
+<table>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>test</td>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>test</td>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>test</td>
+	</tr>
+</table>
+
+
+
+<!-- ② -->
+<!--                             -------       이렇게하면 그냥 lorem 만 나온다 ▼밑에 ③ 방법으로 하면 됨!                -->
+table>(tr>th*2)+(tr>(td{world}+td{lorem}))*3
+<table>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>lorem</td>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>lorem</td>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>lorem</td>
+	</tr>
+</table>
+
+<!-- ③ -->
+<!--                    	  ---------------- ③							                       							 -->
+table>(tr>th*2)+(tr>(td{world}+lorem(td{desc})))*3
+<table>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis dolore mollitia deserunt dicta cupiditate laudantium doloremque nostrum maiores sunt. Libero modi soluta eos expedita nesciunt dignissimos fugiat molestias consequuntur eveniet?</td>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>Ducimus doloribus itaque voluptate distinctio facilis! Distinctio voluptatibus veritatis sapiente magni molestias facere quod iusto numquam reprehenderit quisquam cum veniam similique autem quibusdam assumenda eius pariatur maxime enim optio placeat!</td>
+	</tr>
+	<tr>
+		<td>world</td>
+		<td>Vitae eveniet fugiat voluptates omnis minus itaque quos reiciendis quod ratione ex. Quis incidunt molestias ad beatae magnam voluptates iste dignissimos dolor nesciunt! Voluptatem fugiat assumenda quia vitae ducimus magni.</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

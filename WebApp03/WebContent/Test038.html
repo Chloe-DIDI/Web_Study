@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test038.html</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<script type="text/javascript">
+	
+	//자바스크립트 배열 객체 구성
+	var boardArray = new Array(); //44번째줄꺼가★ 지금은 이것~! 
+	
+	// 사용자 정의 객체 구성(→ 생성자 함수 정의)
+	function Board(uName, uContent)
+	{
+		this.userName = uName;
+		this.content = uContent;
+		this.writeDay = new Date();
+	}
+	
+	// 프로토타입 구성을 통해... 사용자 정의 객체의 함수(기능) 정의
+	Board.prototype.userLocalString = function()
+	{
+		return this.writeDay.getFullYear() + "-" 
+		     + (this.writeDay.getMonth()+1) + "-"
+		     + this.writeDay.getDate() + " "
+			 + this.writeDay.getHours() + ":"
+			 + this.writeDay.getMinutes() + ":"
+			 + this.writeDay.getSeconds();
+			 
+		// 시 → getHours()
+		// 분 → getMinutes()
+		// 초 → getSeconds()
+	};
+	
+		
+	// 글쓰기 버튼이 클릭되었을 때 호출되어 기능하는 함수 → protoTest
+	function protoTest()
+	{
+		var uName = document.getElementById("uName").value;
+		var uContent = document.getElementById("uContent").value;
+		
+		var len = boardArray.length;
+		//alert(len);	//--==>> ★ 이 시점에서 테스트 시 → 0
+		
+		boardArray[len] = new Board(uName, uContent);
+		
+		//alert(len);   //--==>> 작성이 이루어질 때마다 → +1
+		
+		print(len);
+		clear();
+	}
+	
+	
+	//내용 출력 함수
+	function print(idx)
+	{
+		//확인
+		//var strTemp = boardArray[idx].content;
+		//alert(strTemp);
+		
+		var tableNode = document.getElementById("bbsTable");
+		var trNode = document.createElement("tr")
+		
+		trNode.appendChild(createTdNode((idx+1).toString()));					// 번호
+		trNode.appendChild(createTdNode(boardArray[idx].userName));				// 이름
+		trNode.appendChild(createTdNode(boardArray[idx].content));				// 내용
+		trNode.appendChild(createTdNode(boardArray[idx].userLocalString())); 	// 작성일
+		
+		tableNode.appendChild(trNode);
+	}
+	
+	// td 노드 생성 및 반환 함수 정의
+	function createTdNode(val)
+	{
+		var textNode = document.createTextNode(val);
+		var tdNode = document.createElement("td");
+		tdNode.appendChild(textNode);
+		return tdNode;
+	}
+	
+	function clear()
+	{
+		document.getElementById("uName").value = "";
+		document.getElementById("uContent").value = "";
+		
+		document.getElementById("uName").focus();
+	}
+	
+</script>
+
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<p>사용자 정의 객체 및 프로토타입을 활용한 자바스크립트 방명록</p>
+	
+	<div>
+		<form>
+			<!-- 입력 폼을 구성하는 레이아웃 테이블 -->
+			<table class="table">
+				<tr>
+					<th>작성자</th>
+					<td>
+						<input type="text" id="uName" style="width: 150px;">
+					</td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td>
+						<input type="text" id="uContent" style="width: 560px;">
+					</td>
+				</tr>
+			</table>
+			
+			<br>
+			
+			<input type="button" value="글쓰기" class="btn" 
+			       style="width: 625px; height: 50px; font-size: 18pt;" onclick="protoTest()">
+			
+			<br><br>
+			
+			<!-- 방명록의 내용이 리스트 형식으로 보여지는 레이아웃 테이블 -->
+			<table class="table" border="1" id="bbsTable">
+				<tr>
+					<th style="width: 40px;">번호</th>
+					<th style="width: 90px;">작성자</th>
+					<th style="width: 400px;">내용</th>
+					<th>작성일</th>
+				</tr>	
+			</table>
+		</form>
+	</div>
+
+</div>
+
+
+
+</body>
+</html>

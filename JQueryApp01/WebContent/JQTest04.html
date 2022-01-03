@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest04.html</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+   $(function()
+      {
+         $("h1").click(function()
+            {
+               $(this).html(function(index, html)
+                     {
+                        return html + "★";
+               });
+      });
+         
+         //이벤트 강제 발생시키기 : trigger
+   
+         $("input[type=button]").click(function()      //트리거 클릭 되었을때 확인
+               {
+                  //alert("확인");
+                  
+                  
+                  //트리거를 누를때마다 별이 h1에 증가
+                  //강제로 첫번쨰  h1태그에 click 이벤트 발생 시키겠다!
+                  //$("h1").first().click();   
+                  
+                  //강제로 마지막 h1태그에 click 이벤트 발생
+                  $("h1").last().click();
+               });
+   });
+</script>
+
+
+</head>
+<body>
+<input type="button" value="트리거 작동">
+<hr>
+
+<h1>click start1 : </h1>
+<h1>click start2 : </h1>
+</body>
+</html>

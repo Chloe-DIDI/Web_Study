@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test021.html</title>
+</head>
+<body>
+<div>
+	<h1>전송, 취소 버튼 만들기</h1>
+	<hr>
+</div>
+
+<div>
+
+	<!-- 데이터 전송 및 페이지 요청 -->
+	<form action="http://localhost:8090/WebApp01/Test022.html">
+		*이름 <input type="text" name="name" size="15" maxlength="8">
+		<br>
+		
+		*이메일 <input type="text" name="email" size="15" maxlength="20">
+		<br>
+		
+		*하고 싶은 말 <br>
+		<textarea rows="10" cols="50" name="field"></textarea>
+		<br><br>
+		
+		<input type="submit" value="전송하기" name="submitBtn">
+		<input type="reset" value="다시쓰기">
+		<br><br>
+		
+		<input type="button" value="test1">
+		<button type="button">
+			<img alt="" src="images/btn_03.png">
+		</button>
+		
+		<!--@ cntl + shit + * : 주석들 전체 확장 -->
+		<!--@ shift + Enter : 문장 중간에서 엔터 쳐도 다음 문장들 내려가지 않고 다음 줄에 엔터 삽입 -->
+		<!--@ alt + 화살표 위아래 : 그줄 자체가 위아래로 움직임!! -->
+		<!--@ cntl + d : 줄 전체 삭제 -->
+		
+		<!-- pc데이터 영역: 여는 태그와 닫는 태그사이의 공간
+		input type 을 지정하지 않으면 text box가 표현된다. -->
+		
+		<!-- <button type="button">test2</button> -->
+		<!-- <input type="reset" value="test2"> -->
+		<!-- <input type="submit" value="test3"> -->
+		<button type="submit">test3</button>
+		<input type="submit" value="test4">
+		<button>test5</button>
+		
+	</form>
+
+</div>
+
+</body>
+</html>

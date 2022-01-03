@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+   id="WebApp_ID" version="3.1">
+   <display-name>WebApp25</display-name>
+   <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+      <welcome-file>index.htm</welcome-file>
+      <welcome-file>index.jsp</welcome-file>
+      <welcome-file>default.html</welcome-file>
+      <welcome-file>default.htm</welcome-file>
+      <welcome-file>default.jsp</welcome-file>
+   </welcome-file-list>
+   
+   <!-- 
+   <servlet>
+      <servlet-name></servlet-name>
+      <servlet-class></servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+      <servlet-name></servlet-name>
+      <url-pattern></url-pattern>
+   </servlet-mapping>
+   -->
+   
+   <!--  MVCSample01 -->
+   <servlet>
+      <servlet-name>MVCSample01</servlet-name>
+      <servlet-class>com.svt.MVCSample01</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+      <servlet-name>MVCSample01</servlet-name>
+      <url-pattern>/mvcsample01</url-pattern>
+   </servlet-mapping>
+   
+   <!--  MVCSample02 -->
+   <servlet>
+      <servlet-name>MVCSample02</servlet-name>
+      <servlet-class>com.svt.MVCSample02</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+      <servlet-name>MVCSample02</servlet-name>
+      <url-pattern>/mvcsample02</url-pattern>
+   </servlet-mapping>
+   
+</web-app>

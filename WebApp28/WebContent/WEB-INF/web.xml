@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>WebApp00</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+<!-- 	
+
+	<servlet>
+		<servlet-name></servlet-name>
+		<servlet-class></servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name></servlet-name>
+		<url-pattern></url-pattern>
+	</servlet-mapping>
+	
+ -->	
+
+	<!-- helloSend03 -->
+	<servlet>
+	    <servlet-name>HelloSend03</servlet-name>
+		<servlet-class>com.svt.HelloSend03Controller</servlet-class>	
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>HelloSend03</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping> 
+	<!--  ① 여기서 부터 시작
+		/hello 있는거를 이름을 HelloSend03 라고하고
+		 com.svt.HelloSend03Controller 여기로 가는거다~! 보낸다~!
+		 
+		 HelloSend03Controller 로 이동 !!!!
+	 -->
+		
+		
+		
+		
+
+	<servlet>
+		<servlet-name>helloReceive03</servlet-name>
+		<servlet-class>com.svt.HelloReceive03Controller</servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>helloReceive03</servlet-name>
+		<url-pattern>/helloReceive03</url-pattern>
+	</servlet-mapping>
+	<!-- xml 에 있는 ★ 아직 이해 못함 ~!물어보기!! -->
+	
+	
+</web-app>

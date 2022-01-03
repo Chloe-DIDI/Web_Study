@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이력서_자소서_손다정.html</title>
+<style type="text/css" >
+
+/* 페이지 구역 2개 만들기 */
+ div.a{
+     width: 200px;
+     height: 905px;
+     background-color: #2B3A51; 
+     color:white;
+     font-family: 'Pretendard-Regular';
+     font-size: 20pt;
+     margin-left: 22%;
+     padding-top: 2.5%;
+ 
+}
+ 
+ div.b{
+ 	width: 430px;
+ 	height: 905px;
+ 	background-color: #FFFFFF;
+ 	/* border-style:solid; */
+ 	/* border-color: #2B3A51; */
+ 	background-color: #FAF9F6;
+ 	padding-bottom: 2.5%;
+ }
+
+/* 폰트 */ 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*년도 폰트*/
+@font-face {
+    font-family: 'ghanachoco';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 자기소개 칸(짙은파랑) */
+p.headline {color: white; font-family: 'SpoqaHanSansNeo-Regular'; font-weight:bolder; font-size: 18px; letter-spacing: 0.12em; text-indent: 1.8em; font-weight: 550; line-height: 0.73px; text-align: left;}
+p.detail {color:white; font-size: 12.3px; text-indent: 2.5em; line-height: 18.8px; font-weight: 330;}
+
+
+/* 세부 사항 칸(흰색) */
+p.name {color: #474747; font-size: 43pt; font-family: 'GowunBatang-Regular';text-align: center;  font-weight:lighter; ;line-height: 0.8px;}
+/* p.job {color: #474747; font-size: 10pt; font-style: "나눔스퀘어"; font-weight: bolder; text-indent: 2.5em;} */
+p.title {color: #474747; font-size: 16px; font-family: 'SpoqaHanSansNeo-Medium'; letter-spacing: 0.1em; text-indent: 1.1em; font-weight: 550; line-height: 0.001px; text-align: left; }
+p.year {color: #474747; font-size: 14px; font-family: 'ghanachoco';text-indent: 1.5em; line-height: 1px;}
+p.in {color: #4B4B4B; font-size: 12.1px; text-indent: 1.5em;font-family: 'SpoqaHanSansNeo-Medium'; line-height: 15px; }
+p.story {color: #4B4B4B; font-size: 11px; text-indent:  1.5em; font-family: 'SpoqaHanSansNeo-Medium'; line-height: 15px; padding:7px; margin: 5px;}
+p.two {color: #474747; font-size: 13px; font-family: 'SpoqaHanSansNeo-Medium'; text-indent: 1.5em; line-height: 1px;}
+p.two1 {color: #474747; font-size: 13px; font-family: 'SpoqaHanSansNeo-Medium'; text-indent: 1.5em; line-height: 0px; margin-bottom: 4.5px;}
+p.sharp{color:#FFFFFF; font-size:12px; font-family: 'Pretendard-Medium'; background-color:#FFB0D8; width: 30%; }
+p.sharpM{color:#FFFFFF; font-size:12px; font-family: 'Pretendard-Medium'; background-color:#FFB0D8; width: 42%}
+p.sharpML{color:#FFFFFF; font-size:12px; font-family: 'Pretendard-Medium'; background-color:#FFB0D8; width: 62%}
+p.sharpL{color:#FFFFFF; font-size:12px; font-family: 'Pretendard-Medium'; background-color:#FFB0D8; width: 105%}
+
+/* 옆선 */
+.hr-sect {display: flex; flex-basis: 100%; align-items: center; color: #474747; font-size: 12px; margin: 8px 0px; font-weight: bolder; letter-spacing: 0.08em; line-height: 0.01em; text-indent: 1.5em;}
+.hr-sect::after {content: ""; flex-grow: 1; background-color: #2B3A51; height: 8.5px; font-size: 0px; line-height: 10px; margin: 0px 10px; margin-bottom: 1px;}
+/*열맞추기*/
+.space{margin-left: 17px;}
+
+/*두개 나란히*/
+.item-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.item-wrap .items { /* 자식들을 감싸고 있는 부모 */
+  display: block;
+  font-size: 0; /* 가장 중요한 font-size: 0; 속성 */
+  margin: 0 -5px; /* 너비간 10px 간격을 만들기 위해 남은 5px을 양옆으로 땡겨줌 */ 
+}
+.item-wrap .items .item { /* 나란히 배치할 영역 */
+  display: inline-block;
+  width: 50%;
+  padding: 0 5px; /* 간격을 위해 각 너비에 준 패딩 5px을 줌 */
+  vertical-align: middle; /* 나란히 배치하는 와중에 수직정렬도 가운데로 하려고 준 속성 */
+  text-align: left; /* 영역 안 태그들의 텍스트가 center로 오도록 준 속성 */
+  box-sizing: border-box; /* width값이 오롯이 50%를 갖게 하기 위해 준 속성 */
+}
+.item-wrap .items .item .inner { /* 나란히 배치할 영역 안 텍스트를 감싼 div */
+  height: 200px;
+  font-size: initial; /* font-size: 0;을 하면 그 아래 자식들 모두 상속받기 때문에 텍스트가 있는 경우라면 꼭 줘야할 속성 */
+  background: #FAF9F6; /* 간격과 영역을 보여주기 위한 속성 */
+}
+.item-wrap .items .item .inner:before { /* 텍스트를 수직 가운데 정렬하기 위한 가상선택자 */
+  content: ''; /* 가상선택자 안에 빈값을 넣어주기 위해 적용한 속성 */
+  display: inline-block; /* inline-block이어야 vertical-align을 쓸 수 있기 때문에 준 속성 */
+  vertical-align: middle; /* 수직 가운데 정렬을 하기 위해 준 속성 */
+  width: 0; /* 다음에 올 태그와 수직을 맞추기 위한 것이므로 width값은 필요없어서 0으로 줌 */
+  height: 100%; /* height값은 부모의 높이값을 100% 상속받아야 하기 때문에 준 속성 */
+}
+.item-wrap .items .item .inner span { /* 가상선택자와 나란히 배치하기 위해 준 속성 */
+  display: inline-block;
+  vertical-align: middle; 
+}
+</style>
+</head>
+<body>
+<!------------------------------------------------------------------>
+<!-- 자기소개 칸 (짙은 파랑) -->
+<div class="a" style="float: left; position: relative"; align="center">
+	
+	<img src="https://blog.kakaocdn.net/dn/cmGWUI/btrhes8Lnq1/3SHW71gpWDKVRUEnUGHvFk/img.png"; width="120px"; height="120px";>
+	<br>
+	&nbsp;
+	<p class="headline" align="left">ABOUT ME</p>
+	<!-- 수평선 -->
+	<hr size="1.5cm" width="140px" color="white" align="center">
+	<p class="detail" align="left">
+		이름 : 손다정 <br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생년월일 : 1994.06.03 <br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별 : 여성 <br/>
+	</p><br>
+	
+	
+	<p class="headline" align="left">CONTACT</p>
+	<!-- 수평선 -->
+	<hr size="1.5cm" width="140px" color="white">
+	<p class="detail" align="left">
+	<img src="https://blog.kakaocdn.net/dn/bY8Nwr/btrhh82IYGv/pFJKLxJl9UlkM2SCsDXoN0/img.png"; width="20px"; height="20px";>
+	대한민국<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://blog.kakaocdn.net/dn/mgpjm/btrhhRTxxyc/EtvNjKsNt8qlqIbpkaTE90/img.png"; width="20px"; height="20px"; >
+	010.6214.3742<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbRe7jZ%2FbtrhdWvlbrM%2FegCV5BTbj0BPIeElB1qj90%2Fimg.png"; width="22px"; height="22px";>
+	chelll1@naver.com<br/>
+	</p><br>
+	
+	
+	<p class="headline" align="left">INTERESTS</p>
+	<!-- 수평선 -->
+	<hr size="1.8cm" width="140px" color="white">
+	<p class="detail" align="left">
+	커피 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게임 <br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 영화
+	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp; 책<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 명상
+	&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;테니스
+	</p><br>
+	
+	<p class="headline" align="left">HOBBIES</p>
+	<!-- 수평선 -->
+	<hr size="1.7cm" width="140px" color="white">
+	<p class="detail" align="left">
+	<img src="https://blog.kakaocdn.net/dn/l4aRg/btrhe0jTiZI/y2NgbojKxln1XgP1LFt74k/img.png"; width="47px"; height="47px";>
+	<img src="https://blog.kakaocdn.net/dn/0DlJ8/btrhetmhSmo/rnayfkCd1w5EjZXTXz1xPk/img.png"; width="45px"; height="45px";>
+	<img src="https://blog.kakaocdn.net/dn/tcnTL/btrhsfMOnwd/Tc7IXK1hpdchPctjOKpKkk/img.png"; width="45px"; height="45px";>
+	&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<img src="https://blog.kakaocdn.net/dn/bYHGya/btrhets1Aq7/2Mk032mIkZjtYiDXkHNWtk/img.png"; width="47px"; height="47px";>&emsp;&nbsp;&nbsp; 
+	<img src="https://blog.kakaocdn.net/dn/cOW3kv/btrhn3lPxkK/xReVT9KEHqbQYAQ0yeFuJ1/img.png"; width="45px"; height="45px";>
+	
+</div>
+
+<!-- 자기소개 세부(흰색) -->
+<div class="b" style="float: left; position: relative;">
+	<p class="name" align="center"> DAJEONG SON</p>
+	<div class="hr-sect"> DEVELOPER</div>
+	
+	
+	<br>
+	<p class="title">자기소개 및 지원동기</p>
+	<!-- 수평선 -->
+	<div class="space"><hr width="175px" size="1.5cm" color="#2B3A51" align="left"></div>
+	<p class="story"> 
+	
+	
+	
+	전공으로 경영정보학과를 다니며 경영과 연관되어 있는 마케팅, 생산관리, E-비즈니스등 경영학이론과 IT에 관련된 데이터베이스, 자바, 오라클, 오피스 프로그램 등의
+	전문 IT 프로그램을 교육받아 4차 산업혁명 시대에 필요한 지식을 배웠습니다. 
+	제 좌우명은 "도전을 즐겨라" 입니다. 저는 즐기면서 노력할 준비가 되어있고 계속해서 노력한다면 어떤 곳에 가서도 인정을 받을 수 있다고 생각합니다.
+	일을 하면서 깨닫은 것은 각자가 맡은 일에 대해 책임감을 가지고 한다면 좋은 결과는 따라오는 것을 알았습니다. 
+	저 또한 이러한 경험을 바탕으로 책임감 있는 인재로 성장하여 솔선수범하는 자세를 가지겠습니다.</p>
+	
+	
+	
+	<div class="item-wrap">
+	  <div class="items">
+	    <div class="item left"> 
+	      <div class="inner">
+	        <span>&emsp;&emsp;&emsp;&emsp;
+				<p class="title">EDUCATION</p>
+				<!-- 수평선 -->
+				<div class="space"><hr width="110px" size="1.3px" color="black" align="left"></div>
+				<p class="year"> 
+				2021.07 ~ 12</p>
+				<p class="in">&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;쌍용 풀스텍 교육 과정</p>
+				<p class="year"> 
+				2017</p>
+				<p class="in">&emsp;&emsp;Canada Aston School</p>
+				<p class="year">
+				2014 ~ 2020</p>
+				<p class="in">&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;부산가톨릭대학교</p>
+	</span>
+	      </div>
+	    </div>
+	    <div class="item right">
+	      <div class="inner">
+	        <span>&emsp;&emsp;&emsp;&emsp;
+				<p class="title">COMPUTER</p>
+				<!-- 수평선 -->
+				<div class="space"><hr width="110px" size="1.3px" color="#2B3A51" align="left"></div>
+				
+				<p class="in">MS Office &emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Excellect</p> 
+				<p class="in">Auto CAD &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp; Good</p>
+				<p class="in">Adobe Photoshop&emsp;&nbsp;Good</p>
+				<p class="in">개발 언어 &emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Good</p>
+				&nbsp;&emsp;<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FuxUEa%2FbtrhlzZOe1g%2F7ofGE3Fe0vlyBvVkLKVRXK%2Fimg.png"; width="21px"; height="21px";>
+				&emsp;<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbqImev%2FbtrheZyDHJz%2F6I1t6ExBjpEu8CYvDczyNk%2Fimg.png"; width="21px"; height="21px";>
+				&emsp;<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcs22Vm%2FbtrhlzMhhgE%2FzKKPnA6aeRn9KwMGI41cD1%2Fimg.png"; width="21px"; height="21px";>
+				&emsp;<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbSboNT%2FbtrhndhEzd5%2FCbDIFaHAjflic9nmCYNLYk%2Fimg.png"; width="21px"; height="21px";>
+				<!-- <br/><br/><br/> -->
+	</span>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	
+	<p class="title">EXPERIENCE</p>
+	<!-- 수평선 -->
+	<div class="space"><hr width="115px" size="1.5cm" color="#2B3A51" align="left"></div>
+			<p class="two"> 산업체 근로 활동 </p>
+			<p class="in">&emsp;&emsp;·학생 교육 보조 및 사무보조, &nbsp; 3D 프린트 작업 보조</p>
+			<p class="two"> 
+			부산 국제 영화제 자원봉사 </p>
+			<p class="in">&emsp;&emsp;·국내/해외 셀럽 게스트 동선 안내 및 보조, 호텔 리셉션 영화제 파트</p>
+			<p class="two">
+			캐나다 국제 영화제 자원봉사</p>		
+			<p class="in">&emsp;&emsp;·영화제 보조 및 매표 정리</p>
+			<p class="two"> 
+			콩쿨 대회 자원봉사</p>
+			<p class="in">&emsp;&emsp;·참가자 대기 관리 및 감독, &nbsp; 악기 상태 점검
+	</p>
+				
+				
+	<div class="item-wrap">
+	  <div class="items">
+	    <div class="item left"> 
+	      <div class="inner">
+	        <span>&emsp;&emsp;&emsp;&emsp;
+				<p class="title">LANGUAGE</p>
+				<!-- 수평선 -->
+				<div class="space"><hr width="100px" size="1.3px" color="#2B3A51" align="left"></div>
+				<p class="two1">한국어 Korean</p>
+				&emsp;<img src="https://blog.kakaocdn.net/dn/bHXg4F/btrhjtS6gzr/Fqe6PHCYHVqo0mO1GiVhl1/img.png" width="160px" height="11px">
+				<p class="two1">영어 English</p>
+				&emsp;<img src="https://blog.kakaocdn.net/dn/byKAY0/btrhjr8PuuS/gPAT3sP7m5AKn6woejkLkk/img.png" width="160px" height="10px">
+				<p class="two1">중국어 Chinese</p>
+				&emsp;<img src="https://blog.kakaocdn.net/dn/PEUM7/btrhgjDtrhc/qs3EN2m0JqWYu4WLJoGZdK/img.png" width="160px" height="10px">
+				<br/><br/><br/>
+				
+	</span>
+	      </div>
+	    </div>
+	    <div class="item right">
+	      <div class="inner">
+	        <span>&emsp;&emsp;&emsp;
+				<p class="title">STRENGTHS</p>
+				<!-- 수평선 -->
+				<div class="space"><hr width="110px" size="1.3px" color="#2B3A51" align="left"></div>
+				
+				<p class="sharp"># 친화력</p> 
+				<p class="sharpM"># 멀티태스킹</p> 
+				<p class="sharp"># 팀워크</p>
+				<p class="sharpL"># 끝까지 해보는 끊임없는 도전정신</p>
+				<p class="sharpML"># 안되는 건 될때까지</p>
+				<br/><br/><br/>
+	</span>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+</div>
+</body>
+</html>

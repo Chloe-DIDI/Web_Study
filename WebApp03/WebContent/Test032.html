@@ -1,0 +1,47 @@
+				
+				<!-- Test033.html 과 함께 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test032.html</title>
+<style type="text/css">
+   * {color: #223322; font-family: 맑은 고딕; font-weight: bold;}
+   .btn {width: 240px; font-size: 17px;}
+   .btn:hover {color: orange; font-weight: bold;}
+</style>
+
+
+<script type="text/javascript">
+
+	function searchAddr()
+	{
+		window.open("Test033.html", "test", "width=500, height=300");
+	}
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>주소 검색</h2>
+	
+	<form>
+		기본 주소 <input type="text" id="addr1" readonly="readonly">
+		<input type="button" value="검색" class="btn" onclick="searchAddr()">
+		<br><br>
+		상세 주소 <input type="text" id="addr2">
+		<br><br>
+		<span id="txt1" style="color: red; font-weight: bold;"></span>
+	</form>
+</div>
+
+</body>
+</html>

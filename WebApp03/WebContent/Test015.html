@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test015.html</title>
+<style type="text/css">
+	input.box:focus
+	{
+		background-color: yellow;
+	}
+	input.box_su
+	{
+		width: 50px;
+	}
+</style>
+
+<script type="text/javascript">
+	
+	function btnAonclick()
+	{
+		//alert("A버튼 클릭~!!!!");	
+		
+		//alert(document.getElementById("txtLeft"));
+		//alert(document.getElementById("txtLeft").value);
+		//		--------
+		//		Test015 말하는거
+		
+		var txt01 = document.getElementById("txtLeft");
+		var txt02 = document.getElementById("txtRight");
+		var leftStr = txt01.value;
+		//var leftStr = document.getElementById("txtLeft").value;
+		
+		//alert(leftStr);
+		txt02.value = leftStr;
+	}
+	
+	function btnBonclick()
+	{
+		//alert("B버튼 클릭~!!!!");
+		
+		var txt01 = document.getElementById("txtLeft");
+		var txt02 = document.getElementById("txtRight");
+		var rightStr = txt02.value;
+		
+		//alert(rightStr);
+		txt01.value = rightStr;
+	}
+	
+	function btnResultonclick()
+	{
+		//테스트
+		//alert("버튼 클릭~!!!");
+		
+		var num1 = document.getElementById("txt_su1").value;
+		var num2 = document.getElementById("txt_su2").value;
+		
+		//var result = num1 + num2
+		//var result = parseInt(num1 + num2);
+		//var result = parseInt(num1) + parseInt(num2);
+		//						----			------
+		//						"12" 문자열		 "23" 문자열
+		//				--------		---------
+		//int형태로 바껴서 숫자 12 됨!     int로 바껴서 숫자 23
+		var result = Number(num1) + Number(num2);
+		
+		//alert(result);
+		//txt_result.value = result;
+		
+		document.getElementById("txt_result").value = result;
+		
+		//document.getElementById("txt_result").value;
+		// = parseInt(document.getElementById("txtSu1").value = result + parseInt(document.getElementById("txtSu2").value);
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+<div>
+	<hr>
+	<input type="text" class="box" id="txtLeft">
+	<input type="button" value="A버튼" class="btn" id="btnA" onclick=" btnAonclick()">
+	<input type="button" value="B버튼" class="btn" id="btnB" onclick=" btnBonclick()">
+	<input type="text" class="box" id="txtRight">
+	<hr>
+	<input type="text" class="box_su" id="txt_su1">
+	+
+	<input type="text" class="box_su" id="txt_su2">
+	<input type="button" value=" = " class="btn" id="btnResult" onclick="btnResultonclick()">
+	<input type="text" class="box_su" id="txt_result">
+	
+</div>
+
+</body>
+</html>

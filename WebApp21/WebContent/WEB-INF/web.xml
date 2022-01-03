@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>WebApp00</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+		
+	<!--
+	 
+		ctrl + f11이 아니라 ▼ 밑에 주소를 그냥 인터넷에 바로 쳐야댐!!
+		http://localhost:8090/WebApp21/Test1   
+		
+		★★★ xml 은 수정하고 꼭 서버 리스타트 해줘야댐~!★★★ 
+		
+	-->
+
+	<!-- ◎ 먼저 web.xml 처음 키고 ctrl + shift + f 를 한다. → 예쁘게 정리! 강사님이 하라고 하심 -->
+	
+	<!-- Test1 → Servelt 구성 ① -->
+	<!-- 
+	<servlet>
+		<servlet-name>test1Servelt</servlet-name>
+		<servlet-class>com.svt.Test1</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>test1Servelt</servlet-name>
+		<url-pattern>/test1</url-pattern>      
+	</servlet-mapping>
+	 -->   
+	
+	<!--  
+   Test1 → Servelt 구성 ②
+   <servlet>
+		<servlet-name>test1Servelt</servlet-name>
+		<servlet-class>com.svt.Test1</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>김진희</param-value>
+		</init-param>
+		<init-param>
+			<param-name>age</param-name>
+			<param-value>20</param-value>
+		</init-param>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>test1Servelt</servlet-name>
+		<url-pattern>/test1</url-pattern>      
+	</servlet-mapping>
+    -->
+    <!-- Test1 → Servelt 구성 ③ -->
+   <servlet>
+		<servlet-name>test1Servelt</servlet-name>
+		<servlet-class>com.svt.Test1</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>김진희</param-value>
+		</init-param>
+		<init-param>
+			<param-name>age</param-name>
+			<param-value>20</param-value>
+		</init-param>
+		
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>test1Servelt</servlet-name>
+		<url-pattern>/test1</url-pattern>      
+	</servlet-mapping>	
+	
+		<!-- ▶ 추가 -->
+		
+		<context-param>
+			<param-name>type</param-name>
+			<param-value>유머러스</param-value>
+		</context-param>
+		
+	<!-- Test2 -->
+	
+	<servlet>
+		<servlet-name>test2Servlet</servlet-name>
+		<servlet-class>com.svt.Test2</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>test2Servlet</servlet-name>
+		<url-pattern>/test2</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	
+</web-app>

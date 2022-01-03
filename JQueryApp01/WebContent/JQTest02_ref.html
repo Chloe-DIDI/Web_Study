@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest02_ref</title>
+<script type="text/javascript">
+	
+	function actionTest(obj)
+	{
+		var a = document.getElementById(obj.getAttribute("id"));
+		//alert(a);
+		a.innerHTML += "★";
+	}
+</script>
+
+</head>
+<body>
+
+<h1 onclick="actionTest(this)" id="name1">김진령</h1>
+<h1 onclick="actionTest(this)" id="name2">윤유동</h1>
+<h1 onclick="actionTest(this)" id="name3">서승균</h1>
+
+</body>
+</html>
